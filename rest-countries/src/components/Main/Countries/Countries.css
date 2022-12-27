@@ -1,0 +1,17 @@
+.country-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 90px;
+  row-gap: 15px;
+}
+
+.country-card {
+  width: 250px;
+  background-color: white;
+  padding: 20px;
+  color: black;
+}
+
+.img-country {
+  width: 100%;
+}
