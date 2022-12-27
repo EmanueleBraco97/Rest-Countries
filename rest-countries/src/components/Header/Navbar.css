@@ -1,0 +1,28 @@
+#nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  border-bottom: 1px solid lightgray;
+}
+
+.nav-left {
+  display: flex;
+  justify-content: center;
+  width: 35%;
+}
+
+.nav-right {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.button-mode {
+  background-color: transparent;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+}
