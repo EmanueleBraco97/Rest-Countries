@@ -1,6 +1,7 @@
 import "./Countries.css";
-import axios from "axios";
+// import axios from "axios";
 import { useEffect, useState } from "react";
+
 const url = "https://restcountries.com/v3.1/all";
 
 const Countries = () => {

@@ -1,17 +1,20 @@
 .country-bottom {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   column-gap: 90px;
-  row-gap: 15px;
+  row-gap: 50px;
 }
 
 .country-card {
   width: 250px;
-  background-color: white;
+  border-radius: 5px;
+  background: wheat;
   padding: 20px;
   color: black;
 }
 
-.img-country {
+.img-country img {
   width: 100%;
+  border-radius: 5px;
 }
