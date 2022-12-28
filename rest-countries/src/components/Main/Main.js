@@ -4,7 +4,7 @@ import Country from "./Country/Country";
 
 const Main = () => {
   return (
-    <main className="container">
+    <main style={{ background: "#fafafa" }} className="container">
       <Routes>
         <Route index element={<Countries />} />
         <Route path="/country/:countryName" element={<Country />} />

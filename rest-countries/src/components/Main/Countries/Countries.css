@@ -9,7 +9,7 @@
 .country-card {
   width: 250px;
   border-radius: 5px;
-  background: wheat;
+  background: white;
   padding: 20px;
   color: black;
 }
@@ -17,4 +17,12 @@
 .img-country img {
   width: 100%;
   border-radius: 5px;
+}
+
+.country-data h3 {
+  font-weight: bold;
+}
+
+.country-data h5 {
+  font-weight: 400;
 }

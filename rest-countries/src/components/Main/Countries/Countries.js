@@ -1,8 +1,9 @@
 import "./Countries.css";
 // import axios from "axios";
 import { useEffect, useState } from "react";
+import SearchInput from "../Search/SearchInput";
 
-const url = "https://restcountries.com/v3.1/all";
+const url = "https://restcountries.com/v3.1";
 
 const Countries = () => {
   const [countries, setCountries] = useState([]);
@@ -11,7 +12,7 @@ const Countries = () => {
 
   async function getCountries() {
     try {
-      const response = await fetch(`${url}`);
+      const response = await fetch(`${url}/all`);
 
       if (!response.ok) throw new Error("There is an Error");
 
@@ -26,13 +27,29 @@ const Countries = () => {
     }
   }
 
+  const getCountryName = async (countryName) => {
+    try {
+      const response = await fetch(`${url}/name/${countryName}`);
+      if (!response.ok) throw new Error("Not fount any country");
+      const data = await response.json();
+      setCountries(data);
+      setIsLoading(false);
+    } catch (error) {
+      setIsError(error.message);
+    }
+  };
+
   useEffect(() => {
     getCountries();
   }, []);
 
   return (
     <section className="country-container">
-      <div className="country-top"></div>
+      <div className="country-top">
+        <div className="search">
+          <SearchInput onSearch={getCountryName} />
+        </div>
+      </div>
 
       <div className="country-bottom">
         {isLoading && isError && <h1>Loading...</h1>}

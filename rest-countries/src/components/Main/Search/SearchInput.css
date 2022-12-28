@@ -1,0 +1,13 @@
+form {
+  padding: 30px 36px;
+}
+
+input {
+  padding: 7px 25px;
+  color: gray;
+  background: white;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  margin-bottom: 20px;
+}
