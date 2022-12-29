@@ -20,3 +20,7 @@ form {
 .input-light {
   color: #858585;
 }
+
+.input-dark::placeholder {
+  color: #ffffff;
+}
