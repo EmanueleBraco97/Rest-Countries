@@ -1,11 +1,14 @@
 import "./Countries.css";
 // import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import SearchInput from "../Search/SearchInput";
+import { DarkModeContext } from "../../../context/DarkModeContext";
 
 const url = "https://restcountries.com/v3.1";
 
 const Countries = () => {
+  const { darkMode } = useContext(DarkModeContext);
+
   const [countries, setCountries] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState("");
@@ -56,7 +59,13 @@ const Countries = () => {
         {isError && !isLoading && <h2>{isError}</h2>}
 
         {countries.map((country) => (
-          <div className="country-card">
+          <div
+            className={
+              darkMode
+                ? `country-card country-card-dark`
+                : `country-card country-card-light`
+            }
+          >
             <div className="img-country">
               <img src={country.flags.png} alt=""></img>
             </div>

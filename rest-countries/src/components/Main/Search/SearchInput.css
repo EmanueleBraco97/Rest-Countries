@@ -1,13 +1,22 @@
 form {
-  padding: 30px 36px;
+  padding: 30px 43px;
 }
 
-input {
+.input {
   padding: 7px 25px;
-  color: gray;
-  background: white;
   border-radius: 5px;
   border: none;
   outline: none;
   margin-bottom: 20px;
+  width: 350px;
+  height: 40px;
+}
+
+.input-dark {
+  background: #2b3945;
+  color: #ffffff;
+}
+
+.input-light {
+  color: #858585;
 }

@@ -9,7 +9,7 @@
 .country-card {
   width: 250px;
   border-radius: 5px;
-  background: white;
+  background: #ffffff;
   padding: 20px;
   color: black;
 }
@@ -25,4 +25,16 @@
 
 .country-data h5 {
   font-weight: 400;
+}
+
+.country-card-dark {
+  background: #2b3945;
+}
+
+.country-card-dark h3 {
+  color: #ffffff;
+}
+
+.country-card-dark h5 {
+  color: #ffffff;
 }
