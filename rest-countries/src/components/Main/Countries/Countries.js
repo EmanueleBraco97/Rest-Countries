@@ -3,6 +3,7 @@ import "./Countries.css";
 import { useEffect, useState, useContext } from "react";
 import SearchInput from "../Search/SearchInput";
 import { DarkModeContext } from "../../../context/DarkModeContext";
+import FilterRegion from "../FilterRegion/FilterRegion";
 
 const url = "https://restcountries.com/v3.1";
 
@@ -42,6 +43,11 @@ const Countries = () => {
     }
   };
 
+  const getCountryByRegion = async (regionName) => {
+    try {
+    } catch (error) {}
+  };
+
   useEffect(() => {
     getCountries();
   }, []);
@@ -51,6 +57,10 @@ const Countries = () => {
       <div className="country-top">
         <div className="search">
           <SearchInput onSearch={getCountryName} />
+        </div>
+
+        <div className="filter-region">
+          <FilterRegion onSelect={getCountryByRegion} />
         </div>
       </div>
 
