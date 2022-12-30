@@ -38,3 +38,10 @@
 .country-card-dark h5 {
   color: #ffffff;
 }
+
+.country-top {
+  width: 97%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

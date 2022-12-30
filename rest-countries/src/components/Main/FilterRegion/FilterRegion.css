@@ -1,0 +1,7 @@
+select {
+  padding: 7px 25px;
+  height: 40px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

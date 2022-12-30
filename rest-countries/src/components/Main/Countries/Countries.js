@@ -1,11 +1,11 @@
 import "./Countries.css";
 // import axios from "axios";
 import { useEffect, useState, useContext } from "react";
+import { url } from "../../../utils/api";
+import { Link } from "react-router-dom";
 import SearchInput from "../Search/SearchInput";
 import { DarkModeContext } from "../../../context/DarkModeContext";
 import FilterRegion from "../FilterRegion/FilterRegion";
-
-const url = "https://restcountries.com/v3.1";
 
 const Countries = () => {
   const { darkMode } = useContext(DarkModeContext);
@@ -45,7 +45,16 @@ const Countries = () => {
 
   const getCountryByRegion = async (regionName) => {
     try {
-    } catch (error) {}
+      const response = await fetch(`${url}/region/${regionName}`);
+      if (!response.ok) throw new Error("There is an Error");
+
+      const data = await response.json();
+      setCountries(data);
+      setIsLoading(false);
+    } catch (error) {
+      setIsLoading(false);
+      setIsError(error.message);
+    }
   };
 
   useEffect(() => {
@@ -69,24 +78,29 @@ const Countries = () => {
         {isError && !isLoading && <h2>{isError}</h2>}
 
         {countries.map((country) => (
-          <div
-            className={
-              darkMode
-                ? `country-card country-card-dark`
-                : `country-card country-card-light`
-            }
-          >
-            <div className="img-country">
-              <img src={country.flags.png} alt=""></img>
-            </div>
+          <Link to={`/country/${country.name.common}`}>
+            <div
+              className={
+                darkMode
+                  ? `country-card country-card-dark`
+                  : `country-card country-card-light`
+              }
+            >
+              <div className="img-country">
+                <img src={country.flags.png} alt=""></img>
+              </div>
 
-            <div className="country-data">
-              <h3>{country.name.common}</h3>
-              <h5>Population: {country.population}</h5>
-              <h5>Region: {country.region} </h5>
-              <h5>Capital: {country.capital} </h5>
+              <div className="country-data">
+                <h3>{country.name.common}</h3>
+                <h5>
+                  Population:{" "}
+                  {new Intl.NumberFormat().format(country.population)}
+                </h5>
+                <h5>Region: {country.region} </h5>
+                <h5>Capital: {country.capital} </h5>
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>

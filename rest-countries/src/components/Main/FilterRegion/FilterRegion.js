@@ -1,3 +1,5 @@
+import "./FilterRegion.css";
+
 const FilterRegion = ({ onSelect }) => {
   const selectHandler = (e) => {
     const regionName = e.target.value;

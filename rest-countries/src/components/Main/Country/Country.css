@@ -1,0 +1,21 @@
+.country-info-container {
+  display: flex;
+  column-gap: 10px;
+}
+
+.country-info-img,
+.country-info {
+  width: 50%;
+}
+
+.button-back {
+  border: none;
+  outline: none;
+  padding: 10px 25px;
+  cursor: pointer;
+  width: 150px;
+}
+
+a {
+  text-decoration: none;
+}
