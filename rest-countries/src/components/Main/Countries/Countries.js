@@ -21,7 +21,6 @@ const Countries = () => {
       if (!response.ok) throw new Error("There is an Error");
 
       const data = await response.json();
-      console.log(data);
 
       setCountries(data);
       setIsLoading(false);
@@ -77,9 +76,10 @@ const Countries = () => {
         {isLoading && isError && <h1>Loading...</h1>}
         {isError && !isLoading && <h2>{isError}</h2>}
 
-        {countries.map((country) => (
+        {countries.map((country, index) => (
           <Link to={`/country/${country.name.common}`}>
             <div
+              key={index}
               className={
                 darkMode
                   ? `country-card country-card-dark`

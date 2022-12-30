@@ -39,7 +39,7 @@ const Country = () => {
       {isError && !isLoading && <h1>{isError}</h1>}
 
       {country?.map((country, index) => (
-        <section className="country-info-container">
+        <section className="country-info-container" key={index}>
           <div className="country-info-img">
             <img src={country.flags.png} alt="flags"></img>
           </div>
@@ -60,6 +60,24 @@ const Country = () => {
               </h5>
               <h5>
                 Sub Region: <span>{country.subregion}</span>
+              </h5>
+              <h5>
+                Capital: <span>{country.capital}</span>
+              </h5>
+            </div>
+
+            <div className="country-info-right">
+              <h5>
+                Top Level Domain: <span>{country.tld}</span>
+              </h5>
+              <h5>
+                Currencies: <span>{country.currencies.EUR.name}</span>
+              </h5>
+              <h5>
+                Languages:{" "}
+                <span className="languages">
+                  {Object.entries(country.languages)}
+                </span>
               </h5>
             </div>
           </div>

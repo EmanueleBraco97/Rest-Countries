@@ -3,6 +3,11 @@
   column-gap: 10px;
 }
 
+.country-info {
+  display: flex;
+  justify-content: space-around;
+}
+
 .country-info-img,
 .country-info {
   width: 50%;
