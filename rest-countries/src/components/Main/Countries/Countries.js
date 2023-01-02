@@ -1,5 +1,5 @@
 import "./Countries.css";
-// import axios from "axios";
+import axios from "axios";
 import { useEffect, useState, useContext } from "react";
 import { url } from "../../../utils/api";
 import { Link } from "react-router-dom";
@@ -12,48 +12,48 @@ const Countries = () => {
 
   const [countries, setCountries] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [isError, setIsError] = useState("");
+  const [isError, setIsError] = useState(false);
 
   async function getCountries() {
-    try {
-      const response = await fetch(`${url}/all`);
-
-      if (!response.ok) throw new Error("There is an Error");
-
-      const data = await response.json();
-
-      setCountries(data);
-      setIsLoading(false);
-    } catch (error) {
-      setIsLoading(false);
-      setIsError(error.message);
-    }
+    axios
+      .get(`${url}/all`)
+      .then((response) => {
+        setCountries(response.data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        setIsLoading(false);
+        setIsError(error.message);
+      });
   }
 
   const getCountryName = async (countryName) => {
     try {
       const response = await fetch(`${url}/name/${countryName}`);
-      if (!response.ok) throw new Error("Not fount any country");
-      const data = await response.json();
-      setCountries(data);
-      setIsLoading(false);
+      if (response.ok) {
+        const data = await response.json();
+        setCountries(data);
+        setIsLoading(false);
+      } else {
+        setIsLoading(false);
+        setIsError(true);
+      }
     } catch (error) {
       setIsError(error.message);
     }
   };
 
   const getCountryByRegion = async (regionName) => {
-    try {
-      const response = await fetch(`${url}/region/${regionName}`);
-      if (!response.ok) throw new Error("There is an Error");
-
-      const data = await response.json();
-      setCountries(data);
-      setIsLoading(false);
-    } catch (error) {
-      setIsLoading(false);
-      setIsError(error.message);
-    }
+    axios
+      .get(`${url}/region/${regionName}`)
+      .then((response) => {
+        setCountries(response.data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        setIsLoading(false);
+        setIsError(error.message);
+      });
   };
 
   useEffect(() => {
