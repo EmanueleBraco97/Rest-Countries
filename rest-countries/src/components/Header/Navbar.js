@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <nav className={darkMode ? `nav-dark` : `nav-light`} id="nav">
       <div className="nav-left">
-        <h1>Where in the world?</h1>
+        <h3>Where in the world?</h3>
       </div>
 
       <div className="nav-right">

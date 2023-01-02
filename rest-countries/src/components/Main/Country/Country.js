@@ -70,9 +70,16 @@ const Country = () => {
               <h5>
                 Top Level Domain: <span>{country.tld}</span>
               </h5>
-              <h5>
-                Currencies: <span>{country.currencies.EUR.name}</span>
-              </h5>
+              {/* <div>
+                Currencies: {""}
+                {Object.keys(country.currencies).map((item, index) => {
+                  return (
+                    <ul key={index}>
+                      <li>{country[item].name}</li>
+                    </ul>
+                  );
+                })}
+              </div> */}
               <h5>
                 Languages:{" "}
                 <span className="languages">

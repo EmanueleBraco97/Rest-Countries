@@ -77,9 +77,8 @@ const Countries = () => {
         {isError && !isLoading && <h2>{isError}</h2>}
 
         {countries.map((country, index) => (
-          <Link to={`/country/${country.name.common}`}>
+          <Link key={index} to={`/country/${country.name.common}`}>
             <div
-              key={index}
               className={
                 darkMode
                   ? `country-card country-card-dark`

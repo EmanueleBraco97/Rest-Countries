@@ -45,3 +45,10 @@
   align-items: center;
   justify-content: space-between;
 }
+
+@media (min-width: 300px) and (max-width: 768px) {
+  .country-top {
+    display: flex;
+    flex-direction: column;
+  }
+}

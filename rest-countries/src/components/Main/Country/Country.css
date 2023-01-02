@@ -24,3 +24,19 @@
 a {
   text-decoration: none;
 }
+
+@media (min-width: 300px) and (max-width: 768px) {
+  .country-info-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .country-info-img {
+    width: 100%;
+  }
+
+  .country-info {
+    display: flex;
+    flex-direction: column;
+  }
+}

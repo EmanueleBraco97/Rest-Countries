@@ -39,3 +39,15 @@
 .nav-dark button {
   color: white;
 }
+
+@media (min-width: 300px) and (max-width: 768px) {
+  .nav-left {
+    width: 64%;
+    padding-left: 0px;
+  }
+
+  .nav-right {
+    width: 36%;
+    padding-right: 0px;
+  }
+}
