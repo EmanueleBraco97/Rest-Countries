@@ -5,3 +5,9 @@
 .container-light {
   background-color: #fafafa;
 }
+
+@media (min-width: 300px) and (max-width: 768px) {
+  main {
+    padding: 35px;
+  }
+}
