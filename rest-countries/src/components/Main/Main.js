@@ -5,6 +5,7 @@ import "./Main.css";
 
 import { useContext } from "react";
 import { DarkModeContext } from "../../context/DarkModeContext";
+import NoMatch from "./NoMatch";
 
 const Main = () => {
   const { darkMode } = useContext(DarkModeContext);
@@ -13,6 +14,7 @@ const Main = () => {
       <Routes>
         <Route index element={<Countries />} />
         <Route path="/country/:countryName" element={<Country />} />
+        <Route path="*" element={<NoMatch />} />
       </Routes>
     </main>
   );

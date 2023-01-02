@@ -1,7 +1,13 @@
-select {
+.select {
   padding: 7px 25px;
   height: 40px;
   border: none;
   outline: none;
   cursor: pointer;
+  border-radius: 5px;
+}
+
+.select-dark {
+  background: #2b3945;
+  color: #ffffff;
 }

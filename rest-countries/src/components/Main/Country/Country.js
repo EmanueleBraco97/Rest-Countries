@@ -40,7 +40,7 @@ const Country = () => {
 
       {isError && !isLoading && <h1>{isError}</h1>}
 
-      {country?.map((country, index) => (
+      {country.map((country, index) => (
         <section className="country-info-container" key={index}>
           <div className="country-info-img">
             <img src={country.flags.png} alt="flags"></img>
@@ -71,6 +71,17 @@ const Country = () => {
                 <h5>Capital:</h5>
                 <span>{country.capital}</span>
               </div>
+
+              <div className="data-border-countries">
+                <h5>Border Countries:</h5>
+                {country.borders?.map((border, index) => (
+                  <ul key={index}>
+                    <li>
+                      <button>{border}</button>
+                    </li>
+                  </ul>
+                ))}
+              </div>
             </div>
 
             <div className="country-info-right">
@@ -90,9 +101,9 @@ const Country = () => {
               </div>
               <div className="data-country">
                 <h5>Languages: </h5>
-                <span className="languages">
-                  {Object.values(country.languages)}
-                </span>
+                <ul className="languages">
+                  <li>{Object.values(country.languages)}</li>
+                </ul>
               </div>
             </div>
           </div>

@@ -27,9 +27,21 @@
   column-gap: 10px;
 }
 
+.data-border-countries {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
 ul {
   list-style: none;
   padding: 0;
+}
+
+.data-languages {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
 }
 
 .button-back {
