@@ -28,19 +28,16 @@ const Countries = () => {
   }
 
   const getCountryName = async (countryName) => {
-    try {
-      const response = await fetch(`${url}/name/${countryName}`);
-      if (response.ok) {
-        const data = await response.json();
-        setCountries(data);
+    axios
+      .get(`${url}/name/${countryName}`)
+      .then((response) => {
+        setCountries(response.data);
         setIsLoading(false);
-      } else {
+      })
+      .catch((error) => {
         setIsLoading(false);
-        setIsError(true);
-      }
-    } catch (error) {
-      setIsError(error.message);
-    }
+        setIsError(error.message);
+      });
   };
 
   const getCountryByRegion = async (regionName) => {
