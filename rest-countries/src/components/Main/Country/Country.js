@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
 import { url } from "../../../utils/api";
+import { DarkModeContext } from "../../../context/DarkModeContext";
 
 import "./Country.css";
 
@@ -9,6 +10,8 @@ const Country = () => {
   const [country, setCountry] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
+
+  const { darkMode } = useContext(DarkModeContext);
 
   const { countryName } = useParams();
 
@@ -47,7 +50,13 @@ const Country = () => {
           </div>
 
           <div className="country-info">
-            <div className="country-info-left">
+            <div
+              className={
+                darkMode
+                  ? `country-info-left country-info-left-dark`
+                  : `country-info-left`
+              }
+            >
               <h1>{country.name.common}</h1>
               <div className="data-country">
                 <h5>Native Name:</h5>
@@ -84,7 +93,13 @@ const Country = () => {
               </div>
             </div>
 
-            <div className="country-info-right">
+            <div
+              className={
+                darkMode
+                  ? `country-info-right country-info-right-dark`
+                  : `country-info-right`
+              }
+            >
               <div className="data-country">
                 <h5>Top Level Domain:</h5>
                 <span>{country.tld}</span>

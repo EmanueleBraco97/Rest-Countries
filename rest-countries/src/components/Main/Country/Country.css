@@ -15,6 +15,14 @@
   justify-content: space-around;
 }
 
+.country-info-left-dark {
+  color: #ffffff;
+}
+
+.country-info-right-dark {
+  color: #ffffff;
+}
+
 .country-info-img,
 .country-info {
   width: 70%;
