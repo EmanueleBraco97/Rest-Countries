@@ -51,5 +51,8 @@
   .country-top {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    row-gap: 20px;
+    margin-bottom: 20px;
   }
 }

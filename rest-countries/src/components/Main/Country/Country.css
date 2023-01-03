@@ -87,3 +87,9 @@ a {
     flex-direction: column;
   }
 }
+
+@media (min-width: 820px) and (max-width: 1024px) {
+  .country-info-container {
+    column-gap: 50px;
+  }
+}

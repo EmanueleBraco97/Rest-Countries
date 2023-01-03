@@ -5,6 +5,7 @@ import { url } from "../../../utils/api";
 import { DarkModeContext } from "../../../context/DarkModeContext";
 
 import "./Country.css";
+import axios from "axios";
 
 const Country = () => {
   const [country, setCountry] = useState([]);
@@ -17,17 +18,16 @@ const Country = () => {
 
   useEffect(() => {
     const getCountryName = async () => {
-      try {
-        const response = await fetch(`${url}/name/${countryName}`);
-        if (!response.ok) throw new Error("There is An Error");
-
-        const data = await response.json();
-        setCountry(data);
-        setIsLoading(false);
-      } catch (error) {
-        setIsLoading(false);
-        setIsError(true);
-      }
+      axios
+        .get(`${url}/name/${countryName}`)
+        .then((response) => {
+          setCountry(response.data);
+          setIsLoading(false);
+        })
+        .catch((error) => {
+          setIsLoading(false);
+          setIsError(error.message);
+        });
     };
     getCountryName();
   }, [countryName]);
