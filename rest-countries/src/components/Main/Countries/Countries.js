@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect, useState, useContext } from "react";
 import { url } from "../../../utils/api";
 import { Link } from "react-router-dom";
-import SearchInput from "../Search/SearchInput";
+import SearchInput from "./Search/SearchInput";
 import { DarkModeContext } from "../../../context/DarkModeContext";
 import FilterRegion from "../FilterRegion/FilterRegion";
 
