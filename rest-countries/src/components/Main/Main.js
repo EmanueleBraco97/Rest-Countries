@@ -5,7 +5,7 @@ import "./Main.css";
 
 import { useContext } from "react";
 import { DarkModeContext } from "../../context/DarkModeContext";
-import NoMatch from "./NoMatch";
+import NoMatch from "./NoMatch/NoMatch";
 
 const Main = () => {
   const { darkMode } = useContext(DarkModeContext);

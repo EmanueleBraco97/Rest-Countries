@@ -7,12 +7,12 @@ const SearchInput = ({ onSearch }) => {
   const { darkMode } = useContext(DarkModeContext);
   const [input, setInput] = useState("");
 
-  const [debouncedTerm, setDebouncedTerm] = useState(input);
+  const [debouncedInput, setDebouncedInput] = useState(input);
 
   useEffect(() => {
-    const timer = setTimeout(() => setInput(debouncedTerm), 1000);
+    const timer = setTimeout(() => setInput(debouncedInput), 1000);
     return () => clearTimeout(timer);
-  }, [debouncedTerm]);
+  }, [debouncedInput]);
 
   useEffect(() => {
     if (input !== "") {
@@ -30,8 +30,8 @@ const SearchInput = ({ onSearch }) => {
         className={darkMode ? `input input-dark` : `input input-light`}
         type="text"
         placeholder="Search for a country..."
-        onChange={(e) => setDebouncedTerm(e.target.value)}
-        value={debouncedTerm}
+        onChange={(e) => setDebouncedInput(e.target.value)}
+        value={debouncedInput}
       ></input>
     </form>
   );
