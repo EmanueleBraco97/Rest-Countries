@@ -12,6 +12,14 @@
   width: 35%;
 }
 
+.h3-dark {
+  color: #ffffff;
+}
+
+.h3-light {
+  color: #2b3945;
+}
+
 .nav-right {
   width: 40%;
   display: flex;
