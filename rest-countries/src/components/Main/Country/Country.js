@@ -46,7 +46,7 @@ const Country = () => {
       {country.map((country, index) => (
         <section className="country-info-container" key={index}>
           <div className="country-info-img">
-            <img src={country.flags.png} alt="flags"></img>
+            <img className="img-flag" src={country.flags.png} alt="flags"></img>
           </div>
 
           <div className="country-info">

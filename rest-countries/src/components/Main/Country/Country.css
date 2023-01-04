@@ -86,10 +86,32 @@ a {
     display: flex;
     flex-direction: column;
   }
+
+  .data-border-countries {
+    flex-wrap: wrap;
+  }
 }
 
-@media (min-width: 820px) and (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1024px) {
   .country-info-container {
     column-gap: 50px;
+    width: 100%;
+  }
+
+  .country-info-img {
+    width: 50%;
+  }
+
+  .img-flag {
+    width: 250px;
+    height: 400px;
+  }
+
+  .country-info {
+    width: 55%;
+  }
+
+  .data-border-countries {
+    flex-wrap: wrap;
   }
 }
