@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Countries from "./Countries/Countries";
 import Country from "./Country/Country";
 import "./Main.css";
@@ -8,14 +8,27 @@ import { DarkModeContext } from "../../context/DarkModeContext";
 import NoMatch from "./NoMatch/NoMatch";
 
 const Main = () => {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Countries />,
+    },
+
+    {
+      path: "/country/:countryName",
+      element: <Country />,
+    },
+
+    {
+      path: "*",
+      element: <NoMatch />,
+    },
+  ]);
+
   const { darkMode } = useContext(DarkModeContext);
   return (
     <main className={darkMode ? `container-dark` : `container-light`}>
-      <Routes>
-        <Route index element={<Countries />} />
-        <Route path="/country/:countryName" element={<Country />} />
-        <Route path="*" element={<NoMatch />} />
-      </Routes>
+      <RouterProvider router={router} />
     </main>
   );
 };

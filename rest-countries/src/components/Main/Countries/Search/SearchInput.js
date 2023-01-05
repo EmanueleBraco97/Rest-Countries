@@ -3,6 +3,8 @@ import "./SearchInput.css";
 
 import { DarkModeContext } from "../../../../context/DarkModeContext";
 
+import { FaSearch } from "react-icons/fa";
+
 const SearchInput = ({ onSearch }) => {
   const { darkMode } = useContext(DarkModeContext);
   const [input, setInput] = useState("");
@@ -26,6 +28,7 @@ const SearchInput = ({ onSearch }) => {
 
   return (
     <form onSubmit={submitHandler}>
+      <FaSearch />
       <input
         className={darkMode ? `input input-dark` : `input input-light`}
         type="text"
