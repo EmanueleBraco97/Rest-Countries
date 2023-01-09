@@ -1,36 +1,12 @@
-import { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
 import { FaArrowLeft } from "react-icons/fa";
-import { Link, useParams } from "react-router-dom";
-import { url } from "../../../utils/api";
-import { DarkModeContext } from "../../../context/DarkModeContext";
+import { Link } from "react-router-dom";
+import { DarkModeContext } from "../../utils/DarkModeContext";
 
 import "./Country.css";
-import axios from "axios";
 
-const Country = () => {
-  const [country, setCountry] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [isError, setIsError] = useState(false);
-
+const Country = ({ country }) => {
   const { darkMode } = useContext(DarkModeContext);
-
-  const { countryName } = useParams();
-
-  useEffect(() => {
-    const getCountryName = async () => {
-      axios
-        .get(`${url}/name/${countryName}`)
-        .then((response) => {
-          setCountry(response.data);
-          setIsLoading(false);
-        })
-        .catch((error) => {
-          setIsLoading(false);
-          setIsError(error.message);
-        });
-    };
-    getCountryName();
-  }, [countryName]);
 
   return (
     <section className="info-country-principal">
@@ -38,10 +14,6 @@ const Country = () => {
         <FaArrowLeft />
         <Link to="/">Back</Link>
       </button>
-
-      {isLoading && !isError && <h1>Loading...</h1>}
-
-      {isError && !isLoading && <h1>{isError}</h1>}
 
       {country.map((country, index) => (
         <section className="country-info-container" key={index}>

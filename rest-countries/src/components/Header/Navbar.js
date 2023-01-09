@@ -1,7 +1,7 @@
 import "./Navbar.css";
 import { FaMoon } from "react-icons/fa";
 import { useContext } from "react";
-import { DarkModeContext } from "../../context/DarkModeContext";
+import { DarkModeContext } from "../../utils/DarkModeContext";
 
 const Navbar = () => {
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
