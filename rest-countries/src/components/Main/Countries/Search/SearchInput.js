@@ -27,8 +27,19 @@ const SearchInput = ({ onSearch }) => {
   };
 
   return (
-    <form onSubmit={submitHandler}>
-      <FaSearch />
+    <form
+      className={darkMode ? `form form-dark` : `form form-light`}
+      onSubmit={submitHandler}
+    >
+      <div
+        className={
+          darkMode
+            ? `icon-search icon-search-dark`
+            : `icon-search icon-search-light`
+        }
+      >
+        <FaSearch />
+      </div>
       <input
         className={darkMode ? `input input-dark` : `input input-light`}
         type="text"

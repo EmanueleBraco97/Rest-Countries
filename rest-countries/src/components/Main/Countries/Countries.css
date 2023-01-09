@@ -1,3 +1,14 @@
+.country-top {
+  width: 97%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search {
+  padding: 30px 45px;
+}
+
 .country-bottom {
   display: flex;
   justify-content: center;
@@ -40,13 +51,6 @@
   color: #ffffff;
 }
 
-.country-top {
-  width: 97%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 @media (min-width: 300px) and (max-width: 768px) {
   .country-top {
     display: flex;
@@ -58,5 +62,6 @@
 
   .search {
     width: 100%;
+    padding: 0px;
   }
 }
