@@ -11,7 +11,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={darkMode ? `nav-dark` : `nav-light`} id="nav">
+    <nav className={darkMode ? `nav nav-dark` : `nav nav-light`}>
       <div className="nav-left">
         <h3 className={darkMode ? `h3-dark` : `h3-light`}>
           Where in the world?

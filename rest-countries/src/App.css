@@ -7,7 +7,9 @@
 }
 
 @media (min-width: 300px) and (max-width: 768px) {
-  main {
-    padding: 35px;
+  .container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
   }
 }

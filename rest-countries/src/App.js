@@ -37,9 +37,13 @@ function App() {
 
   const { darkMode } = useContext(DarkModeContext);
   return (
-    <main className={darkMode ? `container-dark` : `container-light`}>
+    <div
+      className={
+        darkMode ? `container container-dark` : `container container-light`
+      }
+    >
       <RouterProvider router={router} />
-    </main>
+    </div>
   );
 }
 

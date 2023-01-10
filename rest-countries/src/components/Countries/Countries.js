@@ -10,18 +10,6 @@ const Countries = ({ countries }) => {
   const [displayData, setDisplayData] = useState(countries);
   const [select, setSelect] = useState("");
 
-  // const getCountryByRegion = async (regionName) => {
-  //   axios
-  //     .get(`${url}/region/${regionName}`)
-  //     .then((response) => {
-  //       setIsLoading(false);
-  //     })
-  //     .catch((error) => {
-  //       setIsLoading(false);
-  //       setIsError(error.message);
-  //     });
-  // };
-
   const inputHandler = (e) => {
     e.preventDefault();
     setInput(e.target.value);
@@ -108,13 +96,21 @@ const Countries = ({ countries }) => {
               </div>
 
               <div className="country-data">
-                <h3>{country.name.common}</h3>
-                <h5>
-                  Population:{" "}
-                  {new Intl.NumberFormat().format(country.population)}
-                </h5>
-                <h5>Region: {country.region} </h5>
-                <h5>Capital: {country.capital} </h5>
+                <div className="title-country">
+                  <span>{country.name.common}</span>
+                </div>
+                <div className="info-country">
+                  <span>
+                    <strong>Population: </strong>
+                    {new Intl.NumberFormat().format(country.population)}
+                  </span>
+                  <span>
+                    <strong>Region:</strong> {country.region}{" "}
+                  </span>
+                  <span>
+                    <strong>Capital:</strong> {country.capital}{" "}
+                  </span>
+                </div>
               </div>
             </div>
           </Link>
